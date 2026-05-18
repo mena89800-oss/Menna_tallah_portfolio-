@@ -306,14 +306,29 @@ function wrongAnswer(button){
 createEffect(button,"😡");
 
 }
+<div id="final-video" style="display:none; margin-top:40px;">
 
+<h2>Special Surprise For You ❤️</h2>
+
+<video width="300" controls autoplay>
+<source src="video.mp4" type="video/mp4">
+</video>
+
+</div>
 function finalMessage(button){
 
 createEffect(button,"❤️");
 
 setTimeout(()=>{
 
-alert("I LOVE YOU FOREVER ❤️");
+document.getElementById("q3").style.display="none";
+
+document.getElementById("final-video").style.display="block";
+
+window.scrollTo({
+top: document.body.scrollHeight,
+behavior: "smooth"
+});
 
 },800);
 

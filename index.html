@@ -97,6 +97,26 @@ box-shadow:0 0 20px rgba(255,0,80,0.5);
 max-width:100%;
 }
 
+.fireworks{
+font-size:50px;
+margin:20px 0;
+animation:boom 1s infinite alternate;
+}
+
+@keyframes boom{
+
+from{
+transform:scale(1);
+opacity:0.7;
+}
+
+to{
+transform:scale(1.2);
+opacity:1;
+}
+
+}
+
 @keyframes float{
 
 0%{
@@ -225,10 +245,24 @@ Maybe No
 
 </div>
 
-<!-- Final Video -->
+<!-- Final Celebration -->
 <div id="final-video" style="display:none; margin-top:40px;">
 
-<h2>Special Surprise For You ❤️</h2>
+<h1 style="
+font-size:60px;
+margin-bottom:20px;
+animation:glow 1s infinite alternate;
+">
+Let's Celebrate 🎉
+</h1>
+
+<div class="fireworks">
+🎆 🎇 ✨ 🎆 🎇
+</div>
+
+<h2 style="margin-top:20px;">
+Special Surprise For You ❤️
+</h2>
 
 <video width="300" controls autoplay>
 <source src="video.mp4" type="video/mp4">

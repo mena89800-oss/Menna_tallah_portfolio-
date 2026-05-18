@@ -167,48 +167,51 @@ maybe No
 
 </div>
 
-<script>
+<div id="questions" style="display:none; margin-top:50px;">
 
-function createHeart(){
+<!-- Question 1 -->
+<div class="question" id="q1">
 
-const heart = document.createElement('div');
+<h2>What's your favorite? 🥺</h2>
 
-heart.classList.add('heart');
+<button onclick="correctAnswer('q1','q2',this)">
+Rory ❤️
+</button>
 
-heart.innerHTML = '❤';
+<button onclick="wrongAnswer(this)">
+golf
+</button>
 
-heart.style.left = Math.random() * 100 + 'vw';
+</div>
 
-heart.style.animationDuration =
-Math.random() * 3 + 3 + 's';
+<!-- Question 2 -->
+<div class="question" id="q2" style="display:none;">
 
-document.body.appendChild(heart);
+<h2>Who is the cutest person ever? ✨</h2>
 
-setTimeout(()=>{
-heart.remove();
-},6000);
+<button onclick="correctAnswer('q2','q3',this)">
+you ❤️
+</button>
 
-}
+<button onclick="wrongAnswer(this)">
+Someone else
+</button>
 
-setInterval(createHeart,300);
+</div>
 
-function showQuestions(){
-document.getElementById("questions").style.display = "block";
-}
+<!-- Question 3 -->
+<div class="question" id="q3" style="display:none;">
 
-function correctAnswer(){
-alert("Correct ❤️");
-}
+<h2>Will you stay with me forever? 💍</h2>
 
-function wrongAnswer(){
-alert("Wrong answer 😭");
-}
+<button onclick="finalMessage(this)">
+Yes Forever ❤️
+</button>
 
-function finalMessage(){
-alert("I love you forever ❤️");
-}
+<button onclick="wrongAnswer(this)">
+maybe No
+</button>
 
-</script>
+</div>
 
-</body>
-</html>
+</div>

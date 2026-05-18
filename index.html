@@ -1,13 +1,6 @@
-# Rory-
-Made with love
-index.html
-<html lang="ar">
-
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,6 +29,7 @@ color:white;
 .container{
 text-align:center;
 z-index:2;
+padding:20px;
 }
 
 h1{
@@ -47,6 +41,10 @@ animation: glow 2s infinite alternate;
 p{
 font-size:24px;
 opacity:0.8;
+}
+
+.question{
+margin-top:30px;
 }
 
 .heart{
@@ -83,7 +81,7 @@ text-shadow:0 0 30px red;
 }
 
 button{
-margin-top:30px;
+margin:10px;
 padding:15px 30px;
 border:none;
 border-radius:30px;
@@ -118,9 +116,9 @@ Click Me ❤️
 <div id="questions" style="display:none; margin-top:50px;">
 
 <div class="question">
-<h2>what'sur favorite? 🥺</h2>
+<h2>What's your favorite? 🥺</h2>
 
-<button onclick="correctAnswer(this)">
+<button onclick="correctAnswer()">
 Rory ❤️
 </button>
 
@@ -129,12 +127,10 @@ golf
 </button>
 </div>
 
-<br><br>
-
 <div class="question">
 <h2>Who is the cutest person ever? ✨</h2>
 
-<button onclick="correctAnswer(this)">
+<button onclick="correctAnswer()">
 you ❤️
 </button>
 
@@ -142,8 +138,6 @@ you ❤️
 Someone else
 </button>
 </div>
-
-<br><br>
 
 <div class="question">
 <h2>Will you stay with me forever? 💍</h2>
@@ -158,6 +152,7 @@ maybe No
 </div>
 
 </div>
+
 </div>
 
 <script>
@@ -185,11 +180,23 @@ heart.remove();
 
 setInterval(createHeart,300);
 
-function showMessage(){
+function showQuestions(){
+document.getElementById("questions").style.display = "block";
+}
 
+function correctAnswer(){
+alert("Correct ❤️");
+}
+
+function wrongAnswer(){
+alert("Wrong answer 😭");
+}
+
+function finalMessage(){
 alert("I love you forever ❤️");
-
 }
 
 </script>
 
+</body>
+</html>

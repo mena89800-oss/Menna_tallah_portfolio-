@@ -17,9 +17,6 @@ box-sizing:border-box;
 
 body{
 min-height:100vh;
-display:flex;
-justify-content:center;
-align-items:center;
 background:black;
 font-family:Arial;
 color:white;
@@ -34,6 +31,7 @@ z-index:2;
 padding:20px;
 max-width:700px;
 width:100%;
+margin:auto;
 }
 
 h1{
@@ -90,6 +88,13 @@ position:absolute;
 font-size:25px;
 pointer-events:none;
 animation:pop 1s forwards;
+}
+
+video{
+margin-top:20px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(255,0,80,0.5);
+max-width:100%;
 }
 
 @keyframes float{
@@ -163,12 +168,13 @@ transform:translateY(0);
 You are my favorite person in the world ✨
 </p>
 
+<img src="photo.jpg" class="main-img">
+
+<br>
+
 <button onclick="showQuestions()">
 Click Me ❤️
 </button>
-
-<img src="<img src="photo.jpg">
-" class="main-img">
 
 <div id="questions" style="display:none;">
 
@@ -182,7 +188,7 @@ Rory ❤️
 </button>
 
 <button onclick="wrongAnswer(this)">
-golf
+Golf
 </button>
 
 </div>
@@ -193,7 +199,7 @@ golf
 <h2>Who is the cutest person ever? ✨</h2>
 
 <button onclick="correctAnswer('q2','q3',this)">
-you ❤️
+You ❤️
 </button>
 
 <button onclick="wrongAnswer(this)">
@@ -212,10 +218,21 @@ Yes Forever ❤️
 </button>
 
 <button onclick="wrongAnswer(this)">
-maybe No
+Maybe No
 </button>
 
 </div>
+
+</div>
+
+<!-- Final Video -->
+<div id="final-video" style="display:none; margin-top:40px;">
+
+<h2>Special Surprise For You ❤️</h2>
+
+<video width="300" controls autoplay>
+<source src="video.mp4" type="video/mp4">
+</video>
 
 </div>
 
@@ -250,10 +267,7 @@ function showQuestions(){
 
 document.getElementById("questions").style.display="block";
 
-window.scrollTo({
-top:document.body.scrollHeight,
-behavior:"smooth"
-});
+window.scrollTo(0, document.body.scrollHeight);
 
 }
 
@@ -293,10 +307,7 @@ document.getElementById(current).style.display="none";
 
 document.getElementById(next).style.display="block";
 
-window.scrollTo({
-top:document.body.scrollHeight,
-behavior:"smooth"
-});
+window.scrollTo(0, document.body.scrollHeight);
 
 },800);
 
@@ -306,16 +317,14 @@ function wrongAnswer(button){
 
 createEffect(button,"😡");
 
+button.style.position="absolute";
+
+button.style.left=Math.random()*80+"vw";
+
+button.style.top=Math.random()*80+"vh";
+
 }
-<div id="final-video" style="display:none; margin-top:40px;">
 
-<h2>Special Surprise For You ❤️</h2>
-
-<video width="300" controls autoplay>
-<source src="WhatsApp Video 2026-05-18 at 12.25.54 PM.mp4" type="video/mp4">
-</video>
-
-</div>
 function finalMessage(button){
 
 createEffect(button,"❤️");
@@ -326,10 +335,7 @@ document.getElementById("q3").style.display="none";
 
 document.getElementById("final-video").style.display="block";
 
-window.scrollTo({
-top: document.body.scrollHeight,
-behavior: "smooth"
-});
+window.scrollTo(0, document.body.scrollHeight);
 
 },800);
 

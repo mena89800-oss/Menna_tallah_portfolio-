@@ -19,7 +19,7 @@ box-sizing:border-box;
 body{
 min-height:100vh;
 background:black;
-font-family:Arial;
+font-family:Arial,sans-serif;
 color:white;
 overflow-x:hidden;
 padding:40px 20px;
@@ -30,7 +30,6 @@ position:relative;
 text-align:center;
 padding:20px;
 max-width:700px;
-width:100%;
 margin:auto;
 position:relative;
 z-index:2;
@@ -100,7 +99,17 @@ box-shadow:0 0 20px rgba(255,0,80,0.5);
 max-width:100%;
 }
 
-/* Celebration Background */
+/* Final Celebration */
+
+#final-video{
+display:none;
+margin-top:40px;
+position:relative;
+overflow:hidden;
+padding:40px;
+border-radius:30px;
+background:rgba(255,0,80,0.08);
+}
 
 .celebration-bg{
 position:absolute;
@@ -122,7 +131,7 @@ transparent 70%);
 content:"❤️ ❤️ ❤️ ❤️ ❤️";
 position:absolute;
 font-size:35px;
-opacity:0.2;
+opacity:0.15;
 white-space:nowrap;
 animation:moveHearts 12s linear infinite;
 
@@ -132,7 +141,7 @@ animation:moveHearts 12s linear infinite;
 top:60%;
 animation-duration:18s;
 font-size:50px;
-opacity:0.1;
+opacity:0.08;
 }
 
 .particle{
@@ -257,6 +266,7 @@ Click Me ❤️
 <div id="questions" style="display:none;">
 
 <!-- Question 1 -->
+
 <div class="question" id="q1">
 
 <h2>What's your favorite? 🥺</h2>
@@ -272,6 +282,7 @@ Golf
 </div>
 
 <!-- Question 2 -->
+
 <div class="question" id="q2" style="display:none;">
 
 <h2>Who is the cutest person ever? ✨</h2>
@@ -287,6 +298,7 @@ anypersonanotherme
 </div>
 
 <!-- Question 3 -->
+
 <div class="question" id="q3" style="display:none;">
 
 <h2>Will you stay with me forever? 💍</h2>
@@ -303,41 +315,32 @@ Maybe No
 
 </div>
 
-<!-- Final Celebration -->
+<!-- Final Video -->
 
-<div id="final-video"
-style="
-display:none;
-margin-top:40px;
-position:relative;
-overflow:hidden;
-padding:40px;
-border-radius:30px;
-">
+<div id="final-video">
 
 <div class="celebration-bg"></div>
+
+<div style="position:relative; z-index:2;">
 
 <h1 style="
 font-size:60px;
 margin-bottom:20px;
 animation:glow 1s infinite alternate;
-position:relative;
-z-index:2;
 ">
 Let's Celebrate 🎉
 </h1>
 
-<h2 style="
-margin-top:20px;
-position:relative;
-z-index:2;
-">
+<h2 style="margin-bottom:20px;">
 Special Surprise For You ❤️
 </h2>
 
-<video width="300" controls autoplay style="position:relative; z-index:2;">
+<video width="300" controls autoplay>
 <source src="video.mp4" type="video/mp4">
+Your browser does not support video.
 </video>
+
+</div>
 
 </div>
 
@@ -349,16 +352,16 @@ Special Surprise For You ❤️
 
 function createHeart(){
 
-const heart = document.createElement('div');
+const heart = document.createElement("div");
 
-heart.classList.add('heart');
+heart.classList.add("heart");
 
-heart.innerHTML = '❤';
+heart.innerHTML = "❤";
 
-heart.style.left = Math.random() * 100 + 'vw';
+heart.style.left = Math.random() * 100 + "vw";
 
 heart.style.animationDuration =
-(Math.random() * 3 + 3) + 's';
+(Math.random() * 3 + 3) + "s";
 
 document.body.appendChild(heart);
 

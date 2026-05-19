@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,6 +33,7 @@ padding:20px;
 max-width:700px;
 width:100%;
 margin:auto;
+position:relative;
 }
 
 h1{
@@ -88,6 +90,7 @@ position:absolute;
 font-size:25px;
 pointer-events:none;
 animation:pop 1s forwards;
+z-index:999;
 }
 
 video{
@@ -97,22 +100,77 @@ box-shadow:0 0 20px rgba(255,0,80,0.5);
 max-width:100%;
 }
 
-.fireworks{
+/* Celebration Background */
+
+.celebration-bg{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:1;
+background:
+radial-gradient(circle at center,
+rgba(255,0,80,0.2),
+transparent 70%);
+}
+
+.celebration-bg::before,
+.celebration-bg::after{
+
+content:"❤️ ❤️ ❤️ ❤️ ❤️";
+position:absolute;
+font-size:35px;
+opacity:0.2;
+white-space:nowrap;
+animation:moveHearts 12s linear infinite;
+
+}
+
+.celebration-bg::after{
+top:60%;
+animation-duration:18s;
 font-size:50px;
-margin:20px 0;
-animation:boom 1s infinite alternate;
+opacity:0.1;
 }
 
-@keyframes boom{
-
-from{
-transform:scale(1);
-opacity:0.7;
+.particle{
+position:absolute;
+width:8px;
+height:8px;
+border-radius:50%;
+background:rgba(255,255,255,0.8);
+animation:particleMove linear infinite;
+pointer-events:none;
 }
 
-to{
-transform:scale(1.2);
+@keyframes moveHearts{
+
+0%{
+transform:translateX(-100%);
+}
+
+100%{
+transform:translateX(100vw);
+}
+
+}
+
+@keyframes particleMove{
+
+0%{
+transform:translateY(100vh) scale(0);
+opacity:0;
+}
+
+50%{
 opacity:1;
+}
+
+100%{
+transform:translateY(-20vh) scale(1.5);
+opacity:0;
 }
 
 }
@@ -246,25 +304,37 @@ Maybe No
 </div>
 
 <!-- Final Celebration -->
-<div id="final-video" style="display:none; margin-top:40px;">
+<div id="final-video"
+style="
+display:none;
+margin-top:40px;
+position:relative;
+overflow:hidden;
+padding:40px;
+border-radius:30px;
+">
+
+<div class="celebration-bg"></div>
 
 <h1 style="
 font-size:60px;
 margin-bottom:20px;
 animation:glow 1s infinite alternate;
+position:relative;
+z-index:2;
 ">
 Let's Celebrate 🎉
 </h1>
 
-<div class="fireworks">
-🎆 🎇 ✨ 🎆 🎇
-</div>
-
-<h2 style="margin-top:20px;">
+<h2 style="
+margin-top:20px;
+position:relative;
+z-index:2;
+">
 Special Surprise For You ❤️
 </h2>
 
-<video width="300" controls autoplay>
+<video width="300" controls autoplay style="position:relative; z-index:2;">
 <source src="video.mp4" type="video/mp4">
 </video>
 
@@ -273,6 +343,17 @@ Special Surprise For You ❤️
 </div>
 
 <script>
+
+function smoothScroll(){
+
+window.scrollTo({
+top:document.body.scrollHeight,
+behavior:"smooth"
+});
+
+}
+
+/* Floating Hearts */
 
 function createHeart(){
 
@@ -297,11 +378,38 @@ heart.remove();
 
 setInterval(createHeart,300);
 
+/* Particles */
+
+function createParticle(){
+
+const particle=document.createElement("div");
+
+particle.classList.add("particle");
+
+particle.style.left=Math.random()*100+"vw";
+
+particle.style.animationDuration=
+(Math.random()*5+4)+"s";
+
+particle.style.opacity=Math.random();
+
+document.body.appendChild(particle);
+
+setTimeout(()=>{
+particle.remove();
+},9000);
+
+}
+
+setInterval(createParticle,200);
+
 function showQuestions(){
 
 document.getElementById("questions").style.display="block";
 
-window.scrollTo(0, document.body.scrollHeight);
+setTimeout(()=>{
+smoothScroll();
+},100);
 
 }
 
@@ -341,7 +449,7 @@ document.getElementById(current).style.display="none";
 
 document.getElementById(next).style.display="block";
 
-window.scrollTo(0, document.body.scrollHeight);
+smoothScroll();
 
 },800);
 
@@ -369,7 +477,7 @@ document.getElementById("q3").style.display="none";
 
 document.getElementById("final-video").style.display="block";
 
-window.scrollTo(0, document.body.scrollHeight);
+smoothScroll();
 
 },800);
 
@@ -379,3 +487,4 @@ window.scrollTo(0, document.body.scrollHeight);
 
 </body>
 </html>
+```

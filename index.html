@@ -1,4 +1,348 @@
 ```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+min-height:100vh;
+background:black;
+font-family:Arial;
+color:white;
+overflow-x:hidden;
+padding:40px 20px;
+position:relative;
+}
+
+.container{
+text-align:center;
+padding:20px;
+max-width:700px;
+width:100%;
+margin:auto;
+position:relative;
+z-index:2;
+}
+
+h1{
+font-size:70px;
+margin-bottom:20px;
+animation:glow 2s infinite alternate;
+}
+
+p{
+font-size:24px;
+opacity:0.8;
+margin-bottom:20px;
+}
+
+.main-img{
+width:250px;
+border-radius:20px;
+margin:20px 0;
+box-shadow:0 0 20px rgba(255,0,80,0.5);
+}
+
+.question{
+margin-top:40px;
+animation:fade 0.5s ease;
+}
+
+button{
+margin:10px;
+padding:15px 30px;
+border:none;
+border-radius:30px;
+background:#ff0055;
+color:white;
+font-size:18px;
+cursor:pointer;
+transition:0.3s;
+position:relative;
+}
+
+button:hover{
+transform:scale(1.1);
+}
+
+.heart{
+position:absolute;
+color:red;
+font-size:20px;
+animation:float 6s linear infinite;
+pointer-events:none;
+}
+
+.effect{
+position:absolute;
+font-size:25px;
+pointer-events:none;
+animation:pop 1s forwards;
+z-index:999;
+}
+
+video{
+margin-top:20px;
+border-radius:20px;
+box-shadow:0 0 20px rgba(255,0,80,0.5);
+max-width:100%;
+}
+
+/* Celebration Background */
+
+.celebration-bg{
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+overflow:hidden;
+z-index:1;
+background:
+radial-gradient(circle at center,
+rgba(255,0,80,0.2),
+transparent 70%);
+}
+
+.celebration-bg::before,
+.celebration-bg::after{
+
+content:"❤️ ❤️ ❤️ ❤️ ❤️";
+position:absolute;
+font-size:35px;
+opacity:0.2;
+white-space:nowrap;
+animation:moveHearts 12s linear infinite;
+
+}
+
+.celebration-bg::after{
+top:60%;
+animation-duration:18s;
+font-size:50px;
+opacity:0.1;
+}
+
+.particle{
+position:absolute;
+width:8px;
+height:8px;
+border-radius:50%;
+background:rgba(255,255,255,0.8);
+animation:particleMove linear infinite;
+pointer-events:none;
+}
+
+@keyframes moveHearts{
+
+0%{
+transform:translateX(-100%);
+}
+
+100%{
+transform:translateX(100vw);
+}
+
+}
+
+@keyframes particleMove{
+
+0%{
+transform:translateY(100vh) scale(0);
+opacity:0;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-20vh) scale(1.5);
+opacity:0;
+}
+
+}
+
+@keyframes float{
+
+0%{
+transform:translateY(100vh) scale(0);
+opacity:0;
+}
+
+50%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-10vh) scale(1.5);
+opacity:0;
+}
+
+}
+
+@keyframes glow{
+
+from{
+text-shadow:0 0 10px pink;
+}
+
+to{
+text-shadow:0 0 30px red;
+}
+
+}
+
+@keyframes pop{
+
+0%{
+transform:translateY(0) scale(0);
+opacity:1;
+}
+
+100%{
+transform:translateY(-80px) scale(2);
+opacity:0;
+}
+
+}
+
+@keyframes fade{
+
+from{
+opacity:0;
+transform:translateY(20px);
+}
+
+to{
+opacity:1;
+transform:translateY(0);
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>Happy Birthday ❤️</h1>
+
+<p>
+You are my favorite person in the world ✨
+</p>
+
+<img src="WhatsApp Image 2026-05-17 at 3.01.12 PM (6).jpeg" class="main-img">
+
+<br>
+
+<button onclick="showQuestions()">
+Click Me ❤️
+</button>
+
+<div id="questions" style="display:none;">
+
+<!-- Question 1 -->
+<div class="question" id="q1">
+
+<h2>What's your favorite? 🥺</h2>
+
+<button onclick="correctAnswer('q1','q2',this)">
+Rory ❤️
+</button>
+
+<button onclick="wrongAnswer(this)">
+Golf
+</button>
+
+</div>
+
+<!-- Question 2 -->
+<div class="question" id="q2" style="display:none;">
+
+<h2>Who is the cutest person ever? ✨</h2>
+
+<button onclick="correctAnswer('q2','q3',this)">
+You ❤️
+</button>
+
+<button onclick="wrongAnswer(this)">
+any person another me
+</button>
+
+</div>
+
+<!-- Question 3 -->
+<div class="question" id="q3" style="display:none;">
+
+<h2>Will you stay with me forever? 💍</h2>
+
+<button onclick="finalMessage(this)">
+Yes Forever ❤️
+</button>
+
+<button onclick="wrongAnswer(this)">
+Maybe No
+</button>
+
+</div>
+
+</div>
+
+<!-- Final Celebration -->
+
+<div id="final-video"
+style="
+display:none;
+margin-top:40px;
+position:relative;
+overflow:hidden;
+padding:40px;
+border-radius:30px;
+">
+
+<div class="celebration-bg"></div>
+
+<h1 style="
+font-size:60px;
+margin-bottom:20px;
+animation:glow 1s infinite alternate;
+position:relative;
+z-index:2;
+">
+Let's Celebrate 🎉
+</h1>
+
+<h2 style="
+margin-top:20px;
+position:relative;
+z-index:2;
+">
+Special Surprise For You ❤️
+</h2>
+
+<video width="300" controls autoplay style="position:relative; z-index:2;">
+<source src="video.mp4" type="video/mp4">
+</video>
+
+</div>
+
+</div>
+
 <script>
 
 /* Floating Hearts */
@@ -134,4 +478,7 @@ document.getElementById("final-video").style.display = "block";
 }
 
 </script>
+
+</body>
+</html>
 ```

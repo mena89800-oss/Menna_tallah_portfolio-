@@ -2,8 +2,11 @@
 <html lang="en">
 
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="viewport"
+content="width=device-width, initial-scale=1.0">
 
 <title>Happy Birthday ❤️</title>
 
@@ -16,118 +19,188 @@ box-sizing:border-box;
 }
 
 body{
+
 min-height:100vh;
+
 background:black;
+
 font-family:Arial,sans-serif;
+
 color:white;
+
 overflow-x:hidden;
+
 padding:40px 20px;
+
 position:relative;
+
 }
 
 /* Container */
 
 .container{
+
 text-align:center;
+
 padding:20px;
+
 max-width:1000px;
+
 margin:auto;
+
 position:relative;
+
 z-index:2;
+
 }
 
 /* Titles */
 
 h1{
+
 font-size:70px;
+
 margin-bottom:20px;
+
 animation:glow 2s infinite alternate;
+
 }
 
 h2{
 margin-bottom:20px;
 }
 
+/* Text */
+
 p{
+
 font-size:24px;
-opacity:0.85;
-margin-bottom:20px;
-line-height:1.7;
+
+opacity:0.9;
+
+line-height:1.8;
+
 }
 
 /* Main Image */
 
 .main-img{
+
 width:250px;
+
 border-radius:20px;
+
 margin:20px 0;
-box-shadow:0 0 20px rgba(255,0,80,0.5);
+
+box-shadow:
+0 0 25px rgba(255,0,80,0.5);
+
 }
 
 /* Questions */
 
 .question{
+
 margin-top:40px;
+
 animation:fade 0.5s ease;
+
 }
 
 /* Buttons */
 
 button{
+
 margin:10px;
+
 padding:15px 30px;
+
 border:none;
+
 border-radius:30px;
+
 background:#ff0055;
+
 color:white;
+
 font-size:18px;
+
 cursor:pointer;
+
 transition:0.3s;
+
 position:relative;
+
 }
 
 button:hover{
+
 transform:scale(1.1);
+
 }
 
 /* Floating Hearts */
 
 .heart{
+
 position:absolute;
+
 color:red;
+
 font-size:20px;
+
 animation:float 6s linear infinite;
+
 pointer-events:none;
+
 }
 
-/* Emoji Effects */
+/* Effects */
 
 .effect{
+
 position:absolute;
+
 font-size:25px;
+
 pointer-events:none;
+
 animation:pop 1s forwards;
+
 z-index:999;
+
 }
 
 /* Particles */
 
 .particle{
+
 position:absolute;
+
 width:8px;
+
 height:8px;
+
 border-radius:50%;
+
 background:rgba(255,255,255,0.8);
+
 animation:particleMove linear infinite;
+
 pointer-events:none;
+
 }
 
-/* Memories Section */
+/* Memories Page */
 
 #memories-page{
+
 display:none;
+
 margin-top:40px;
+
 padding:40px 20px;
+
 border-radius:35px;
 
 background:
@@ -143,20 +216,26 @@ box-shadow:
 0 0 40px rgba(255,0,80,0.2);
 
 position:relative;
+
 overflow:hidden;
 
 animation:fade 1s ease;
+
 }
 
 /* Gallery */
 
 .memory-gallery{
+
 display:grid;
+
 grid-template-columns:
 repeat(auto-fit,minmax(180px,1fr));
 
 gap:20px;
-margin-bottom:40px;
+
+margin-top:40px;
+
 }
 
 /* Images */
@@ -164,12 +243,15 @@ margin-bottom:40px;
 .memory-gallery img{
 
 width:100%;
+
 height:220px;
+
 object-fit:cover;
 
 border-radius:25px;
 
-border:2px solid rgba(255,255,255,0.1);
+border:
+2px solid rgba(255,255,255,0.1);
 
 box-shadow:
 0 0 20px rgba(255,0,80,0.25);
@@ -177,6 +259,7 @@ box-shadow:
 transition:0.4s;
 
 background:#111;
+
 }
 
 .memory-gallery img:hover{
@@ -188,9 +271,10 @@ box-shadow:
 
 }
 
-/* Final Section */
+/* VIDEO PAGE */
 
-#final-video{
+#video-page{
+
 display:none;
 
 margin-top:40px;
@@ -200,6 +284,7 @@ padding:60px 30px;
 border-radius:35px;
 
 position:relative;
+
 overflow:hidden;
 
 background:
@@ -210,23 +295,17 @@ transparent 70%
 );
 
 animation:fade 1s ease;
-}
 
-/* Special Video */
-
-.special-video-wrapper{
-margin-top:50px;
-margin-bottom:50px;
 }
 
 .video-title{
 
-font-size:40px;
+font-size:42px;
 
-margin-bottom:25px;
+margin-bottom:30px;
 
 text-shadow:
-0 0 15px rgba(255,0,80,0.7);
+0 0 20px rgba(255,0,80,0.8);
 
 }
 
@@ -235,6 +314,7 @@ text-shadow:
 .special-video-card{
 
 width:100%;
+
 max-width:850px;
 
 margin:auto;
@@ -256,6 +336,7 @@ box-shadow:
 0 0 40px rgba(255,0,80,0.3);
 
 transition:0.5s;
+
 }
 
 .special-video-card:hover{
@@ -270,6 +351,7 @@ box-shadow:
 .special-video-card video{
 
 width:100%;
+
 display:block;
 
 border-radius:25px;
@@ -280,46 +362,44 @@ object-fit:cover;
 
 }
 
-/* Romantic Message */
+/* MESSAGE PAGE */
+
+#message-page{
+
+display:none;
+
+margin-top:40px;
+
+animation:fade 1s ease;
+
+}
+
+/* Romantic Message Card */
 
 .final-message{
 
 max-width:850px;
 
-margin:50px auto 0;
+margin:auto;
 
-padding:40px;
+padding:60px 45px;
 
-background:
-linear-gradient(
-135deg,
-rgba(255,0,80,0.18),
-rgba(255,255,255,0.04)
-);
+background:white;
 
-border:
-1px solid rgba(255,255,255,0.12);
+color:#ff0055;
 
-border-radius:35px;
-
-backdrop-filter:blur(12px);
-
-box-shadow:
-0 0 40px rgba(255,0,80,0.25),
-inset 0 0 20px rgba(255,255,255,0.03);
-
-font-size:24px;
-line-height:2;
-
-opacity:0.95;
+border-radius:40px;
 
 position:relative;
+
 overflow:hidden;
 
-animation:fade 1s ease;
+box-shadow:
+0 0 60px rgba(255,255,255,0.2);
+
 }
 
-/* Decorative Heart */
+/* Decorative Hearts */
 
 .final-message::before{
 
@@ -327,47 +407,39 @@ content:"❤️";
 
 position:absolute;
 
-top:-15px;
-left:30px;
+top:20px;
+left:25px;
 
-font-size:30px;
+font-size:35px;
 
-background:black;
+animation:heartMove 3s infinite ease-in-out;
 
-padding:0 10px;
-
-text-shadow:
-0 0 15px #ff0055;
 }
-
-/* Decorative Sparkle */
 
 .final-message::after{
 
-content:"✨";
+content:"❤️";
 
 position:absolute;
 
-bottom:-10px;
-right:30px;
+bottom:20px;
+right:25px;
 
-font-size:28px;
+font-size:35px;
 
-text-shadow:
-0 0 15px pink;
+animation:heartMove 4s infinite ease-in-out;
+
 }
 
-/* Hover */
+.final-message p{
 
-.final-message:hover{
+font-size:25px;
 
-transform:scale(1.01);
+line-height:2;
 
-transition:0.5s;
+color:#ff0055;
 
-box-shadow:
-0 0 60px rgba(255,0,80,0.35),
-inset 0 0 30px rgba(255,255,255,0.05);
+font-weight:bold;
 
 }
 
@@ -405,6 +477,22 @@ opacity:0.08;
 
 /* Animations */
 
+@keyframes heartMove{
+
+0%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-10px);
+}
+
+100%{
+transform:translateY(0px);
+}
+
+}
+
 @keyframes moveHearts{
 
 0%{
@@ -420,11 +508,13 @@ transform:translateX(100vw);
 @keyframes particleMove{
 
 0%{
+
 transform:
 translateY(100vh)
 scale(0);
 
 opacity:0;
+
 }
 
 50%{
@@ -432,11 +522,13 @@ opacity:1;
 }
 
 100%{
+
 transform:
 translateY(-20vh)
 scale(1.5);
 
 opacity:0;
+
 }
 
 }
@@ -444,11 +536,13 @@ opacity:0;
 @keyframes float{
 
 0%{
+
 transform:
 translateY(100vh)
 scale(0);
 
 opacity:0;
+
 }
 
 50%{
@@ -456,11 +550,13 @@ opacity:1;
 }
 
 100%{
+
 transform:
 translateY(-10vh)
 scale(1.5);
 
 opacity:0;
+
 }
 
 }
@@ -480,19 +576,23 @@ text-shadow:0 0 30px red;
 @keyframes pop{
 
 0%{
+
 transform:
 translateY(0)
 scale(0);
 
 opacity:1;
+
 }
 
 100%{
+
 transform:
 translateY(-80px)
 scale(2);
 
 opacity:0;
+
 }
 
 }
@@ -500,29 +600,36 @@ opacity:0;
 @keyframes fade{
 
 from{
+
 opacity:0;
 
 transform:
 translateY(20px);
+
 }
 
 to{
+
 opacity:1;
 
 transform:
 translateY(0);
+
 }
 
 }
 
 </style>
+
 </head>
 
 <body>
 
 <div class="container">
 
-<h1>Happy Birthday ❤️</h1>
+<h1>
+Happy Birthday ❤️
+</h1>
 
 <p>
 You are my favorite person in the world ✨
@@ -540,13 +647,17 @@ Click Me ❤️
 
 <!-- QUESTIONS -->
 
-<div id="questions" style="display:none;">
+<div id="questions"
+style="display:none;">
 
 <div class="question" id="q1">
 
-<h2>What's your favorite? 🥺</h2>
+<h2>
+What's your favorite? 🥺
+</h2>
 
-<button onclick="correctAnswer('q1','q2',this)">
+<button
+onclick="correctAnswer('q1','q2',this)">
 Rory ❤️
 </button>
 
@@ -560,9 +671,12 @@ Golf
 id="q2"
 style="display:none;">
 
-<h2>Who is the cutest person ever? ✨</h2>
+<h2>
+Who is the cutest person ever? ✨
+</h2>
 
-<button onclick="correctAnswer('q2','q3',this)">
+<button
+onclick="correctAnswer('q2','q3',this)">
 You ❤️
 </button>
 
@@ -576,7 +690,9 @@ ahmedwaled
 id="q3"
 style="display:none;">
 
-<h2>Will you stay with me forever? 💍</h2>
+<h2>
+Will you stay with me forever? 💍
+</h2>
 
 <button onclick="finalMessage(this)">
 Yes Forever ❤️
@@ -590,7 +706,7 @@ Maybe No
 
 </div>
 
-<!-- MEMORIES -->
+<!-- MEMORIES PAGE -->
 
 <div id="memories-page">
 
@@ -628,9 +744,9 @@ Continue ❤️
 
 </div>
 
-<!-- FINAL PAGE -->
+<!-- VIDEO PAGE -->
 
-<div id="final-video">
+<div id="video-page">
 
 <div class="celebration-bg"></div>
 
@@ -642,10 +758,6 @@ I Love You Forever ❤️
 You make my world beautiful ✨
 </p>
 
-<!-- VIDEO -->
-
-<div class="special-video-wrapper">
-
 <h2 class="video-title">
 Our Special Video ❤️
 </h2>
@@ -655,32 +767,42 @@ Our Special Video ❤️
 <video controls preload="metadata">
 
 <source
-src="https://drive.google.com/uc?export=download&id=1LeJW7I4Hoc6tzQsQv_RNsy19pkY8yHG1"
+src="video.mp4.mp4"
 type="video/mp4">
 
 </video>
 
 </div>
 
+<br>
+
+<button onclick="showMessagePage()">
+Open My Message ❤️
+</button>
+
 </div>
 
-<!-- MESSAGE -->
+<!-- MESSAGE PAGE -->
+
+<div id="message-page">
 
 <div class="final-message">
 
 <p>
 
-Happy birthday to the greatest, purest,
-sweetest, kindest, strongest, and most
-handsome man I've ever seen in my entire
-existence, to the love of my life a man
-in a world where masculinity is so rare,
+Happy birthday to the greatest,
+purest, sweetest, kindest,
+strongest, and most handsome man
+I've ever seen in my entire existence,
+to the love of my life a man in a world
+where masculinity is so rare,
 a love in a world filled with hate,
 a human when everyone turns into monsters,
 a color when everything around is pale,
 a sun when the cold hits the most,
 a shelter when there's no place to go,
-and a safe place, as I've always called you.
+and a safe place,
+as I've always called you.
 
 <br><br>
 
@@ -868,7 +990,7 @@ document
 
 }
 
-/* Final Celebration */
+/* Show Video Page */
 
 function showFinalCelebration(){
 
@@ -877,7 +999,21 @@ document
 .style.display = "none";
 
 document
-.getElementById("final-video")
+.getElementById("video-page")
+.style.display = "block";
+
+}
+
+/* Show Message Page */
+
+function showMessagePage(){
+
+document
+.getElementById("video-page")
+.style.display = "none";
+
+document
+.getElementById("message-page")
 .style.display = "block";
 
 }

@@ -1,16 +1,12 @@
-
 ```html
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Menna Tallah Videofolio</title>
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <style>
 
@@ -39,7 +35,7 @@ overflow-x:hidden;
 
 }
 
-/* SCROLLBAR */
+/* SCROLL */
 
 ::-webkit-scrollbar{
 width:8px;
@@ -50,7 +46,7 @@ background:#4fa3ff;
 border-radius:20px;
 }
 
-/* FLOATING LIGHTS */
+/* LIGHT EFFECTS */
 
 .light{
 
@@ -83,7 +79,7 @@ right:-80px;
 animation-delay:2s;
 }
 
-/* MAIN CONTAINER */
+/* CONTAINER */
 
 .container{
 
@@ -99,7 +95,7 @@ z-index:2;
 
 }
 
-/* HERO SECTION */
+/* HERO */
 
 .hero{
 
@@ -303,8 +299,6 @@ gap:30px;
 
 position:relative;
 
-height:420px;
-
 border-radius:35px;
 
 overflow:hidden;
@@ -319,7 +313,8 @@ backdrop-filter:blur(10px);
 
 transition:0.5s;
 
-cursor:pointer;
+box-shadow:
+0 10px 30px rgba(0,0,0,0.3);
 
 }
 
@@ -333,18 +328,23 @@ box-shadow:
 
 }
 
-/* THUMBNAIL */
+/* VIDEO */
 
 .video-thumb{
 
 width:100%;
-height:100%;
+
+height:420px;
 
 object-fit:cover;
 
+display:block;
+
+background:black;
+
 }
 
-/* OVERLAY */
+/* PLAY ICON */
 
 .video-overlay{
 
@@ -352,21 +352,21 @@ position:absolute;
 
 inset:0;
 
-background:
-linear-gradient(
-180deg,
-rgba(0,0,0,0.1),
-rgba(0,0,0,0.7)
-);
-
 display:flex;
 
 align-items:center;
 justify-content:center;
 
-}
+pointer-events:none;
 
-/* PLAY BUTTON */
+background:
+linear-gradient(
+180deg,
+rgba(0,0,0,0.1),
+rgba(0,0,0,0.4)
+);
+
+}
 
 .play-btn{
 
@@ -394,21 +394,9 @@ color:white;
 
 transition:0.4s;
 
-box-shadow:
-0 0 30px rgba(255,255,255,0.08);
-
 }
 
-.video-card:hover .play-btn{
-
-transform:scale(1.1);
-
-background:
-rgba(79,163,255,0.2);
-
-}
-
-/* VIDEO TEXT */
+/* VIDEO INFO */
 
 .video-info{
 
@@ -503,7 +491,7 @@ font-size:40px;
 
 <div class="container">
 
-<!-- HERO -->
+<!-- HERO SECTION -->
 
 <section class="hero">
 
@@ -528,8 +516,7 @@ and luxury commercial edits.
 <div class="glass-card">
 
 <img
-src="5900011044716268188.jpg
-"
+src="5900011044716268188.jpg"
 class="profile-img">
 
 <div class="info">
@@ -554,7 +541,7 @@ class="profile-img">
 
 </section>
 
-<!-- WORK -->
+<!-- WORK SECTION -->
 
 <section class="work-section">
 
@@ -564,17 +551,20 @@ My Work
 
 <div class="video-grid">
 
-<!-- VIDEO CARD 1 -->
-
-<a href="https://drive.google.com/file/d/1-B2xz0f1-Mt-Lxo0LHPwhAgKQpCW24X7/view?usp=sharing"
-target="_blank"
-style="text-decoration:none;color:white;">
+<!-- VIDEO 1 -->
 
 <div class="video-card">
 
-<img
-src="thumbnail1.jpg"
-class="video-thumb">
+<video
+class="video-thumb"
+controls
+poster="thumbnail1.jpg">
+
+<source
+src="ELEGANCE 1.mp4"
+type="video/mp4">
+
+</video>
 
 <div class="video-overlay">
 
@@ -598,19 +588,20 @@ Commercial Reel
 
 </div>
 
-</a>
-
-<https://drive.google.com/file/d/1MIGAozxe0l3jwUTC4ata2eSFqQl0xpcV/view?usp=drive_link>
-
-<a href="VIDEO-LINK-2"
-target="_blank"
-style="text-decoration:none;color:white;">
+<!-- VIDEO 2 -->
 
 <div class="video-card">
 
-<img
-src="thumbnail2.jpg"
-class="video-thumb">
+<video
+class="video-thumb"
+controls
+poster="thumbnail2.jpg">
+
+<source
+src="f5 + f5.mp4.mp4"
+type="video/mp4">
+
+</video>
 
 <div class="video-overlay">
 
@@ -634,19 +625,20 @@ Social Media Video
 
 </div>
 
-</a>
-
-<https://drive.google.com/file/d/15bzby70jeoIh-CcL3ut1oGHgqj1hMNcR/view?usp=sharing>
-
-<a href="VIDEO-LINK-3"
-target="_blank"
-style="text-decoration:none;color:white;">
+<!-- VIDEO 3 -->
 
 <div class="video-card">
 
-<img
-src="thumbnail3.jpg"
-class="video-thumb">
+<video
+class="video-thumb"
+controls
+poster="thumbnail3.jpg">
+
+<source
+src="https://drive.google.com/file/d/1MIGAozxe0l3jwUTC4ata2eSFqQl0xpcV/view?usp=drive_link"
+type="video/mp4">
+
+</video>
 
 <div class="video-overlay">
 
@@ -669,8 +661,6 @@ Creative Motion Design
 </div>
 
 </div>
-
-</a>
 
 </div>
 

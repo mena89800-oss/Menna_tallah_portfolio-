@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -30,7 +29,6 @@ linear-gradient(
 );
 
 color:white;
-
 overflow-x:hidden;
 
 }
@@ -57,8 +55,7 @@ height:250px;
 
 border-radius:50%;
 
-background:
-rgba(79,163,255,0.12);
+background:rgba(79,163,255,0.12);
 
 filter:blur(80px);
 
@@ -117,7 +114,7 @@ display:grid;
 grid-template-columns:
 1fr 420px;
 
-gap:40px;
+gap:50px;
 
 align-items:center;
 
@@ -129,11 +126,11 @@ width:100%;
 
 .hero-text h1{
 
-font-size:70px;
+font-size:72px;
 
 line-height:1.1;
 
-margin-bottom:20px;
+margin-bottom:25px;
 
 background:
 linear-gradient(
@@ -151,11 +148,11 @@ white,
 
 font-size:20px;
 
-line-height:1.8;
+line-height:1.9;
 
-opacity:0.8;
+opacity:.85;
 
-max-width:550px;
+max-width:600px;
 
 }
 
@@ -176,7 +173,7 @@ padding:30px;
 border-radius:35px;
 
 box-shadow:
-0 0 40px rgba(0,0,0,0.3);
+0 0 40px rgba(0,0,0,.3);
 
 position:relative;
 
@@ -197,7 +194,7 @@ width:200px;
 height:200px;
 
 background:
-rgba(79,163,255,0.18);
+rgba(79,163,255,.18);
 
 border-radius:50%;
 
@@ -205,7 +202,7 @@ filter:blur(40px);
 
 }
 
-/* PROFILE IMAGE */
+/* PROFILE */
 
 .profile-img{
 
@@ -220,7 +217,7 @@ border-radius:25px;
 margin-bottom:20px;
 
 border:
-1px solid rgba(255,255,255,0.15);
+1px solid rgba(255,255,255,.15);
 
 }
 
@@ -243,16 +240,16 @@ padding:15px 20px;
 border-radius:18px;
 
 background:
-rgba(255,255,255,0.05);
+rgba(255,255,255,.05);
 
 border:
-1px solid rgba(255,255,255,0.08);
+1px solid rgba(255,255,255,.08);
 
 font-size:16px;
 
 }
 
-/* WORK SECTION */
+/* PROJECTS */
 
 .work-section{
 
@@ -280,24 +277,12 @@ white,
 
 }
 
-/* VIDEO GRID */
-
-.video-grid{
-
-display:grid;
-
-grid-template-columns:
-repeat(auto-fit,minmax(300px,1fr));
-
-gap:30px;
-
-}
 .project-grid{
 
 display:grid;
 
 grid-template-columns:
-repeat(auto-fit,minmax(350px,1fr));
+repeat(auto-fit,minmax(320px,1fr));
 
 gap:30px;
 
@@ -306,10 +291,10 @@ gap:30px;
 .project-card{
 
 background:
-rgba(255,255,255,0.05);
+rgba(255,255,255,.05);
 
 border:
-1px solid rgba(255,255,255,0.1);
+1px solid rgba(255,255,255,.1);
 
 border-radius:35px;
 
@@ -319,11 +304,18 @@ transition:.4s;
 
 backdrop-filter:blur(10px);
 
+box-shadow:
+0 10px 30px rgba(0,0,0,.25);
+
 }
 
 .project-card:hover{
 
-transform:translateY(-10px);
+transform:
+translateY(-10px);
+
+box-shadow:
+0 20px 40px rgba(79,163,255,.15);
 
 }
 
@@ -335,6 +327,8 @@ height:350px;
 
 object-fit:cover;
 
+display:block;
+
 }
 
 .project-info{
@@ -345,9 +339,9 @@ padding:25px;
 
 .project-info h3{
 
-font-size:26px;
+font-size:28px;
 
-margin-bottom:10px;
+margin-bottom:12px;
 
 }
 
@@ -355,11 +349,25 @@ margin-bottom:10px;
 
 opacity:.75;
 
-margin-bottom:15px;
+line-height:1.6;
+
+margin-bottom:18px;
 
 }
 
 .project-info a{
+
+display:inline-block;
+
+padding:12px 22px;
+
+border-radius:15px;
+
+background:
+rgba(79,163,255,.15);
+
+border:
+1px solid rgba(79,163,255,.25);
 
 color:#7bc0ff;
 
@@ -367,27 +375,37 @@ text-decoration:none;
 
 font-weight:bold;
 
+transition:.3s;
+
 }
+
+.project-info a:hover{
+
+background:
+rgba(79,163,255,.25);
+
+}
+
 /* FOOTER */
 
 .footer{
 
-padding:40px 0;
+padding:60px 0 20px;
 
 text-align:center;
 
-opacity:0.6;
+opacity:.6;
 
 font-size:15px;
 
 }
 
-/* ANIMATIONS */
+/* ANIMATION */
 
 @keyframes float{
 
 0%{
-transform:translateY(0px);
+transform:translateY(0);
 }
 
 50%{
@@ -395,7 +413,7 @@ transform:translateY(20px);
 }
 
 100%{
-transform:translateY(0px);
+transform:translateY(0);
 }
 
 }
@@ -410,9 +428,21 @@ grid-template-columns:1fr;
 
 }
 
+.hero-text{
+
+text-align:center;
+
+}
+
 .hero-text h1{
 
 font-size:48px;
+
+}
+
+.hero-text p{
+
+margin:auto;
 
 }
 
@@ -442,20 +472,24 @@ font-size:40px;
 
 <div class="hero-text">
 
-<<h1>
-Menna Tallah Portfolio
+<h1>
+Menna Tallah
+Portfolio
 </h1>
 
 <p>
-Brand Identity & Graphic Designer specializing in logo design,
-visual identity systems, packaging design,
-and creative branding solutions.
+Brand Identity & Graphic Designer specializing in visual identity systems,
+logo design, packaging design, brand strategy and creative branding solutions.
+Creating memorable brands with modern and elegant visual experiences.
 </p>
+
+</div>
 
 <div class="glass-card">
 
 <img
-src="5900011044716268188.jpg"
+src="profile.jpg"
+alt="Menna Tallah"
 class="profile-img">
 
 <div class="info">
@@ -469,7 +503,7 @@ class="profile-img">
 </div>
 
 <div class="info-item">
- Brand Identity & Graphic Designer
+🎨 Brand Identity & Graphic Designer
 </div>
 
 </div>
@@ -479,6 +513,8 @@ class="profile-img">
 </div>
 
 </section>
+
+<!-- PROJECTS -->
 
 <section class="work-section">
 
@@ -488,23 +524,26 @@ Featured Projects
 
 <div class="project-grid">
 
+<!-- BINA -->
+
 <div class="project-card">
 
 <img
 src="bina-cover.jpg"
+alt="BINA Developments"
 class="project-image">
 
 <div class="project-info">
 
 <h3>
-Bina Developments
+BINA Developments
 </h3>
 
 <p>
-Complete Brand Identity Design
+Complete real estate brand identity including logo, color system, typography and brand applications.
 </p>
 
-<a href="project-bina.html">
+<a href="bina.html">
 View Project →
 </a>
 
@@ -512,23 +551,26 @@ View Project →
 
 </div>
 
+<!-- VEIL -->
+
 <div class="project-card">
 
 <img
-src="realestate-cover.jpg"
+src="veil-cover.jpg"
+alt="Veil Scarf"
 class="project-image">
 
 <div class="project-info">
 
 <h3>
-Real Estate Logo Design
+Veil Scarf
 </h3>
 
 <p>
-Logo Design Project
+Fashion brand identity project featuring logo design, packaging and visual branding system.
 </p>
 
-<a href="project-realestate.html">
+<a href="veil.html">
 View Project →
 </a>
 
@@ -536,23 +578,26 @@ View Project →
 
 </div>
 
+<!-- LOGOS -->
+
 <div class="project-card">
 
 <img
-src="hijab-cover.jpg"
+src="logos-cover.jpg"
+alt="Logo Collection"
 class="project-image">
 
 <div class="project-info">
 
 <h3>
-Hijab Brand Identity
+Logo Collection
 </h3>
 
 <p>
-Branding & Packaging Design
+A selection of standalone logo design projects presented with professional mockups.
 </p>
 
-<a href="project-hijab.html">
+<a href="logos.html">
 View Project →
 </a>
 
@@ -564,6 +609,13 @@ View Project →
 
 </section>
 
+<!-- FOOTER -->
+
+<div class="footer">
+Menna Tallah © 2026
+</div>
+
+</div>
+
 </body>
 </html>
-```

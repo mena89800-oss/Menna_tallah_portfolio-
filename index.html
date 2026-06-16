@@ -6,7 +6,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Menna Tallah Videofolio</title>
+<title>Menna Tallah Portfolio</title>
 
 <style>
 
@@ -292,16 +292,18 @@ repeat(auto-fit,minmax(300px,1fr));
 gap:30px;
 
 }
+.project-grid{
 
-/* VIDEO CARD */
+display:grid;
 
-.video-card{
+grid-template-columns:
+repeat(auto-fit,minmax(350px,1fr));
 
-position:relative;
+gap:30px;
 
-border-radius:35px;
+}
 
-overflow:hidden;
+.project-card{
 
 background:
 rgba(255,255,255,0.05);
@@ -309,122 +311,63 @@ rgba(255,255,255,0.05);
 border:
 1px solid rgba(255,255,255,0.1);
 
+border-radius:35px;
+
+overflow:hidden;
+
+transition:.4s;
+
 backdrop-filter:blur(10px);
 
-transition:0.5s;
+}
 
-box-shadow:
-0 10px 30px rgba(0,0,0,0.3);
+.project-card:hover{
+
+transform:translateY(-10px);
 
 }
 
-.video-card:hover{
-
-transform:
-translateY(-10px);
-
-box-shadow:
-0 20px 40px rgba(79,163,255,0.15);
-
-}
-
-/* VIDEO */
-
-.video-thumb{
+.project-image{
 
 width:100%;
 
-height:420px;
+height:350px;
 
 object-fit:cover;
 
-display:block;
+}
 
-background:black;
+.project-info{
+
+padding:25px;
 
 }
 
-/* PLAY ICON */
+.project-info h3{
 
-.video-overlay{
+font-size:26px;
 
-position:absolute;
-
-inset:0;
-
-display:flex;
-
-align-items:center;
-justify-content:center;
-
-pointer-events:none;
-
-background:
-linear-gradient(
-180deg,
-rgba(0,0,0,0.1),
-rgba(0,0,0,0.4)
-);
+margin-bottom:10px;
 
 }
 
-.play-btn{
+.project-info p{
 
-width:90px;
-height:90px;
+opacity:.75;
 
-border-radius:50%;
-
-background:
-rgba(255,255,255,0.12);
-
-backdrop-filter:blur(12px);
-
-border:
-1px solid rgba(255,255,255,0.25);
-
-display:flex;
-
-align-items:center;
-justify-content:center;
-
-font-size:35px;
-
-color:white;
-
-transition:0.4s;
+margin-bottom:15px;
 
 }
 
-/* VIDEO INFO */
+.project-info a{
 
-.video-info{
+color:#7bc0ff;
 
-position:absolute;
+text-decoration:none;
 
-bottom:25px;
-left:25px;
-
-z-index:2;
+font-weight:bold;
 
 }
-
-.video-info h3{
-
-font-size:24px;
-
-margin-bottom:8px;
-
-}
-
-.video-info p{
-
-opacity:0.75;
-
-font-size:15px;
-
-}
-
 /* FOOTER */
 
 .footer{
@@ -499,19 +442,15 @@ font-size:40px;
 
 <div class="hero-text">
 
-<h1>
-Welcome Menna Tallah Videofolio
+<<h1>
+Menna Tallah Portfolio
 </h1>
 
 <p>
-Creative video editor & graphic designer
-creating cinematic visuals,
-beauty campaigns,
-social media videos,
-and luxury commercial edits.
+Brand Identity & Graphic Designer specializing in logo design,
+visual identity systems, packaging design,
+and creative branding solutions.
 </p>
-
-</div>
 
 <div class="glass-card">
 
@@ -530,7 +469,7 @@ class="profile-img">
 </div>
 
 <div class="info-item">
-🎬 Video Editor & Graphic Designer
+ Brand Identity & Graphic Designer
 </div>
 
 </div>
@@ -540,122 +479,82 @@ class="profile-img">
 </div>
 
 </section>
-
-<!-- WORK SECTION -->
 
 <section class="work-section">
 
 <h2 class="section-title">
-My Work
+Featured Projects
 </h2>
 
-<div class="video-grid">
+<div class="project-grid">
 
-<!-- VIDEO 1 -->
+<div class="project-card">
 
-<div class="video-card">
+<img
+src="bina-cover.jpg"
+class="project-image">
 
-<video
-class="video-thumb"
-controls
-poster="thumbnail1.jpg">
-
-<source
-src="ELEGANCE 1.mp4"
-type="video/mp4">
-
-</video>
-
-<div class="video-overlay">
-
-<div class="play-btn">
-▶
-</div>
-
-</div>
-
-<div class="video-info">
+<div class="project-info">
 
 <h3>
-Beauty Campaign
+Bina Developments
 </h3>
 
 <p>
-Commercial Reel
+Complete Brand Identity Design
 </p>
 
-</div>
+<a href="project-bina.html">
+View Project →
+</a>
 
-</div>
-
-<!-- VIDEO 2 -->
-
-```html
-<div class="video-card">
-
-<iframe
-class="video-thumb"
-src="https://drive.google.com/file/d/1MIGAozxe0l3jwUTC4ata2eSFqQl0xpcV/preview"
-title="Video"
-frameborder="0"
-allowfullscreen>
-</iframe>
-
-<div class="video-overlay">
-
-<div class="play-btn">
-▶
 </div>
 
 </div>
 
-<div class="video-info">
+<div class="project-card">
+
+<img
+src="realestate-cover.jpg"
+class="project-image">
+
+<div class="project-info">
 
 <h3>
-Luxury Edit
+Real Estate Logo Design
 </h3>
 
 <p>
-Social Media Video
+Logo Design Project
 </p>
 
-</div>
+<a href="project-realestate.html">
+View Project →
+</a>
 
-</div>
-```
-  
-<!-- VIDEO 3 -->
-
-<div class="video-card">
-
-<video
-class="video-thumb"
-controls
-poster="thumbnail3.jpg">
-
-<source
-src="f5 + f5.mp4"
-type="video/mp4">
-
-</video>
-
-<div class="video-overlay">
-
-<div class="play-btn">
-▶
 </div>
 
 </div>
 
-<div class="video-info">
+<div class="project-card">
+
+<img
+src="hijab-cover.jpg"
+class="project-image">
+
+<div class="project-info">
 
 <h3>
-Product Reel
+Hijab Brand Identity
 </h3>
 
 <p>
-Creative Motion Design
+Branding & Packaging Design
 </p>
+
+<a href="project-hijab.html">
+View Project →
+</a>
 
 </div>
 
@@ -664,12 +563,6 @@ Creative Motion Design
 </div>
 
 </section>
-
-<div class="footer">
-Menna Tallah © 2026
-</div>
-
-</div>
 
 </body>
 </html>
